@@ -33,7 +33,8 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/authentication/register/",
+        
+        "https://career-connect-production-194e.up.railway.app/authentication/register/",
         {
           username: formData.username.trim(),
           email: formData.email.trim(),

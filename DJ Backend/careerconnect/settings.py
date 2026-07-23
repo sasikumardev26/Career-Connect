@@ -157,6 +157,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:5174",
     "http://localhost:5175",
+    "https://career-connect-pmc1.vercel.app",
+
+
     
 ]
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

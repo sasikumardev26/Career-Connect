@@ -47,7 +47,7 @@ const PostJob = () => {
     try {
 
       await axios.post(
-        "http://127.0.0.1:8000/job/jobs/",
+        "https://career-connect-production-194e.up.railway.app/job/jobs/",
         job
       );
 

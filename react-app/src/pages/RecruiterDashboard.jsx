@@ -25,11 +25,11 @@ const RecruiterDashboard = () => {
     try {
 
       const jobsResponse = await axios.get(
-        "http://127.0.0.1:8000/job/jobs/"
+        "https://career-connect-production-194e.up.railway.app/job/jobs/"
       );
 
       const applicationResponse = await axios.get(
-        "http://127.0.0.1:8000/job/applications/"
+        "https://career-connect-production-194e.up.railway.app/job/applications/"
       );
 
       setJobs(jobsResponse.data);

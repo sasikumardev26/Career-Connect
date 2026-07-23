@@ -27,7 +27,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/authentication/login/",
+        "https://career-connect-production-194e.up.railway.app/authentication/login/",
         loginData
       );
 

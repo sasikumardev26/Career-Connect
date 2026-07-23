@@ -25,15 +25,15 @@ const AdminDashboard = () => {
   const fetchDashboard = async () => {
     try {
       const usersResponse = await axios.get(
-        "http://127.0.0.1:8000/authentication/users/"
+        "https://career-connect-production-194e.up.railway.app/authentication/users/"
       );
 
       const jobsResponse = await axios.get(
-        "http://127.0.0.1:8000/job/jobs/"
+        "https://career-connect-production-194e.up.railway.app/job/jobs/"
       );
 
       const applicationResponse = await axios.get(
-        "http://127.0.0.1:8000/job/applications/"
+        "https://career-connect-production-194e.up.railway.app/job/applications/"
       );
 
       setUsers(usersResponse.data);

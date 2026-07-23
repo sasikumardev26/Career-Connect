@@ -27,7 +27,7 @@ const ViewApplicants = () => {
   const fetchApplications = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/job/applications/"
+        "https://career-connect-production-194e.up.railway.app/job/applications/"
       );
 
       setApplications(response.data);
@@ -47,7 +47,7 @@ const ViewApplicants = () => {
 
     try {
       await axios.patch(
-        `http://127.0.0.1:8000/job/applications/${id}/`,
+        `https://career-connect-production-194e.up.railway.app/job/applications/${id}/`,
         { status }
       );
 

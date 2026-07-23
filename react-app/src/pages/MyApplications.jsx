@@ -11,7 +11,7 @@ const MyApplications = () => {
   const fetchApplications = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/job/applications/"
+        "https://career-connect-production-194e.up.railway.app/job/applications/"
       );
 
       setApplications(response.data);
@@ -81,7 +81,7 @@ const MyApplications = () => {
 
                 {item.resume && (
                   <a
-                    href={`http://127.0.0.1:8000${item.resume}`}
+                    href={`https://career-connect-production-194e.up.railway.app${item.resume}`}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-block mt-5 text-blue-600 font-semibold"

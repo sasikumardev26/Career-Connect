@@ -40,7 +40,7 @@ const EditJob = () => {
     try {
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/job/jobs/${id}/`
+        `https://career-connect-production-194e.up.railway.app/job/jobs/${id}/`
       );
 
       setJob(response.data);
@@ -71,7 +71,7 @@ const EditJob = () => {
     try {
 
       await axios.patch(
-        `http://127.0.0.1:8000/job/jobs/${id}/`,
+        `https://career-connect-production-194e.up.railway.app/job/jobs/${id}/`,
         job
       );
 

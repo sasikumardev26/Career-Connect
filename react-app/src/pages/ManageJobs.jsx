@@ -20,7 +20,7 @@ const ManageJobs = () => {
   const fetchJobs = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/job/jobs/"
+        "https://career-connect-production-194e.up.railway.app/job/jobs/"
       );
 
       setJobs(response.data);
@@ -42,7 +42,7 @@ const ManageJobs = () => {
     try {
 
       await axios.delete(
-        `http://127.0.0.1:8000/job/jobs/${id}/`
+        `https://career-connect-production-194e.up.railway.app/job/jobs/${id}/`
       );
 
       toast.success("Job Deleted Successfully");

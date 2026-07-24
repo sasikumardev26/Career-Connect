@@ -170,7 +170,7 @@ const Register = () => {
                 className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               >
                 <option value="student">Student</option>
-                <option value="recruiter">Recruiter</option>
+                
               </select>
             </div>
 

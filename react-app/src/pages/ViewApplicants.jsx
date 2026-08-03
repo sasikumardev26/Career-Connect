@@ -38,31 +38,38 @@ const ViewApplicants = () => {
   };
 
   const updateStatus = async (id, status) => {
-    const confirmMessage =
+  const confirmMessage =
+    status === "Accepted"
+      ? "Are you sure you want to accept this application?"
+      : "Are you sure you want to reject this application?";
+
+  if (!window.confirm(confirmMessage)) return;
+
+  // UI update immediately
+  setApplications((prev) =>
+    prev.map((app) =>
+      app.id === id ? { ...app, status } : app
+    )
+  );
+
+  try {
+    await axios.patch(
+      `https://career-connect-production-194e.up.railway.app/job/applications/${id}/`,
+      { status }
+    );
+
+    toast.success(
       status === "Accepted"
-        ? "Are you sure you want to accept this application?"
-        : "Are you sure you want to reject this application?";
+        ? "Application Accepted Successfully"
+        : "Application Rejected Successfully"
+    );
+  } catch (error) {
+    // If API fails, reload original data
+    await fetchApplications();
 
-    if (!window.confirm(confirmMessage)) return;
-
-    try {
-      await axios.patch(
-        `https://career-connect-production-194e.up.railway.app/job/applications/${id}/`,
-        { status }
-      );
-
-      fetchApplications();
-
-      toast.success(
-        status === "Accepted"
-          ? "Application Accepted Successfully"
-          : "Application Rejected Successfully"
-      );
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to update application");
-    }
-  };
+    toast.error("Failed to update application");
+  }
+};
 
   const filteredApplications = applications.filter((app) =>
     app.application_name.toLowerCase().includes(search.toLowerCase())
